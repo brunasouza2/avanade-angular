@@ -1,0 +1,17 @@
+<p>contador works!</p>
+<div [ngStyle]="{ background: cont < 4 ? 'red' : 'green'}" [ngClass]="{custom : cont >5}">
+<p>O contador é {{ cont }}</p>
+</div>
+
+<div *ngIf="cont > 5; else menor">Contador passou de 5</div>
+
+<ng-template #menor>
+  <div>Contador menor que 5</div>
+</ng-template>
+
+<div [ngSwitch]="cont">
+  <div *ngSwitchCase="3">Igual a 3</div>
+  <div *ngSwitchCase="1">Igual a 1</div>
+  <div *ngSwitchCase="8">Igual a 8</div>
+  <div *ngSwitchDefault>Default Switch</div>
+</div>
