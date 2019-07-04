@@ -1,0 +1,76 @@
+<form #form="ngForm" id="formTodo">
+    <!--<p>Description:</p>
+    <input type="text" 
+    [(ngModel)]="todo.description" 
+    #descricao="ngModel" 
+    minlength="4" 
+    email
+    required
+    name="descricao">
+    
+    <div *ngIf="descricao.errors && descricao.touched">
+        <div *ngIf="descricao?.errors.minlength">Email deve ter no mínimo 4 caracteres</div>
+        <div *ngIf="descricao?.errors.required">Email é obrigatório</div>
+        <div *ngIf="descricao?.invalid">Email inválido</div>
+    </div>
+    <div>
+        <b>{{todo.description}}</b>
+    </div>-->
+
+    {{todo | json}}
+
+    <div class="form-group"> 
+        <p>Title:</p>
+        <input type="text" 
+        [(ngModel)]="todo.title" 
+        #title="ngModel" 
+        required
+        name="title"
+        placeholder="Enter title"
+        class="form-control">
+    </div>
+    
+    <div class="form-group"> 
+        <p>Description:</p>
+        <input type="text" 
+        [(ngModel)]="todo.description" 
+        #descricao="ngModel" 
+        required
+        name="title"
+        placeholder="Enter description"
+        class="form-control">
+    </div>
+    
+    <div class="form-group"> 
+        <p>Id:</p>
+        <input type="text" 
+        [(ngModel)]="todo.id" 
+        #id="ngModel" 
+        required
+        name="id"
+        placeholder="Enter id"
+        class="form-control">
+    </div>
+    
+    
+    <div class="form-group"> 
+        <p>Date:</p>
+        <input type="text" 
+        [(ngModel)]="todo.date" 
+        #date="ngModel" 
+        required
+        name="date"
+        placeholder="Enter data"
+        class="form-control">
+    </div>
+    
+    <div> 
+        <label for="chTrue">Finalizado?&ensp;</label>
+        <input type="checkbox" name="finished" [(ngModel)] ="todo.finished">        
+    </div>
+    
+    <div id="divButton">
+        <button [disabled]="form.invalid" (click)="enviar()" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
+
