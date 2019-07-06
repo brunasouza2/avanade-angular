@@ -1,14 +1,32 @@
-<app-contador></app-contador>
+<!--<app-contador></app-contador>
 
 <b>App > {{  contador  }} </b>
 
-<app-contador-botoes></app-contador-botoes>
+<app-contador-botoes></app-contador-botoes>-->
+<div *ngIf="user$ | async; else deslogado">    
+    Olá, {{(user$ | async).email}}
 
-<br/>
-<a routerLink="/">Home</a>
-|
-<a routerLink="/todos">Todos</a>
-|
-<a routerLink="/todos/add">Adicionar Todos</a>
+    <button (click)="logout()">Sair</button>
+
+    <div>
+        <a routerLink="/">Home</a>
+        |
+        <a routerLink="/cep">CEP</a>
+        |
+        <a routerLink="/todos">Todos</a>
+        |        
+        <a routerLink="/todos/add">Adicionar Todos</a>
+    </div>    
+</div>
+
+<ng-template #deslogado>
+        <a routerLink="/">Home</a>
+        |
+        <a routerLink="/cep">CEP</a>
+        |
+        <a routerLink="/auth/login">Login</a>
+        |
+        <a routerLink="/auth/register">Register</a>
+</ng-template>
 
 <router-outlet></router-outlet>

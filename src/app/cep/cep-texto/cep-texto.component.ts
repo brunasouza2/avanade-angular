@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CepService } from '../cep.service';
+import { CepService } from '../cep/cep.service';
 
 @Component({
   selector: 'app-cep-texto',
